@@ -8,19 +8,29 @@
     <div class="todo-container">
       <h1>
         Todo List
-        <img src="img.jpg" class="left" alt="hi" />
-        <img src="img2.jpg" class="right" alt="hi" />
       </h1>
       <h2>"If you can't, you must and If you must, you can"-Anthony Robbins</h2>
 
       <form>
-        <input
-          type="text"
-          placeholder="Keep yourself busy. What's your next project?"
-        />
-        <input type="submit" id="submit" value="Add" />
-        <div id="tasks"></div>
+          <input
+            type="text"
+            placeholder="Keep yourself busy. What's your next project?"
+          />
+          <input type="submit" id="submit" value="Add" />
       </form>
+
+      <div id="tasks">
+        <div class="task">
+          <div class="content">
+            <input type="text" class="text" value="Next to be done" readonly /> 
+          </div>
+          <div class="action">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      
       <ul class="todo-list"></ul>
     </div>
     <script src="main.js"></script>
