@@ -1,2 +1,2 @@
 # ToDoList
-For self improvement
+Solely for learning purpose
