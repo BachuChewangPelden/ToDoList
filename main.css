@@ -2,10 +2,14 @@
   --dark:#2B2D42;
   --darker:#202231;
   --grey:#8D99AE;
+  --greyer:#5b6371;
   --light:#EDF2F4;
-  --red: #D90429;
+  --red: rgb(232, 14, 14);
+  --light_red: #d15e72;
   --blue:#003049;
-  --purple:#613f75;
+  --purple:#bb3db3;
+  --light_purple: #c7a9da;
+  --green:#79856c;
 }
 
 body {
@@ -15,9 +19,32 @@ body {
   background-color:var(--grey);
 }
 
+#task_input{
+  flex: 1 1 0%;
+  background-color:var(--grey);
+  color: var(--light);
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-right: 3rem;
+}
+
+#task_input::placeholder{
+  color:var(--light);
+  opacity: 0.65;
+}
+
+
+input,button{
+  appearance: none;
+  border:none;
+  outline:none;
+  background: none;
+}
+
 #submit {
   position: relative;
-  width: 150px;
+  width: 100px;
   border: none;
   background: var(--dark);
   color: var(--light);
@@ -47,30 +74,63 @@ body {
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-.left {
-  width: 30px;
-  position: absolute;
-  margin-top: -10px;
-  margin-left: -171px;
+
+.task{
+  position: relative;
+  flex: 1 1 0%;
+  max-width: 700px;
+  width:100%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--greyer);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  padding:0.8rem ;
 }
 
-.right {
-  width: 30px;
-  position: absolute;
-  margin-top: -10px;
-  margin-left: 3px;
+.edit{
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.4s;
 }
+.edit:hover{
+  color: var(--light_purple);
+}
+.edit:active{
+  opacity:0.8;
+  color: var(--purple);
+}
+
+.delete{
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.delete:hover{
+  color: var(--light_red);
+}
+.delete:active{
+  opacity:0.8;
+  color: var(--red);
+
+}
+
 
 .todo-container h1 {
   font-size: 32px;
   text-align: center;
-  color: var(--darker);
+  color: var(--blue);
 }
 
 .todo-container h2 {
   text-align: center;
   font-style: italic;
-  color: var(--purple);
+  color: var(--darker);
 }
 
 .todo-container form {
@@ -87,7 +147,6 @@ body {
 }
 
 .todo-container form button {
-  background-color: var();
   color: #fff;
   border: none;
   padding: 10px 20px;
