@@ -18,6 +18,9 @@ body {
   font-family: Arial, sans-serif;
   background-color:var(--grey);
 }
+.content{
+  flex: 1 1 0%;
+}
 
 #task_input{
   flex: 1 1 0%;
@@ -73,52 +76,66 @@ input,button{
   width: 80%;
   margin: 70px auto;
   background-color: var(--light);
-  padding: 30px 50px 70px;
+  padding: 30px 50px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.task{
-  position: relative;
-  flex: 1 1 0%;
-  max-width: 700px;
-  width:100%;
-  margin: 40px auto;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--greyer);
-  border-radius: 1rem;
-  margin-bottom: -1.5rem;
-  padding:0.8rem ;
+#tasks{
+  padding:10px ;
 }
 
-.edit{
-  font-weight: 700;
-  font-size: 1rem;
-  color: #fff;
+#tasks .task {
+  display:flex;
+  justify-content: space-between;
+  background-color: var(--greyer);
+  padding:0.8rem ;
+  border-radius: 1rem;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+#tasks .task .content .text{
+  color: var(--light);
+  width: 100%;
+  display: block;
   transition: 0.4s;
 }
-.edit:hover{
-  color: var(--light_purple);
+
+#tasks .task .content .text:not(:read-only){
+  background-color:var(--light);
+  color:var(--greyer)
 }
-.edit:active{
+
+#tasks .task .action{
+  display:flex;
+  margin: 1 -0.5rem;
+}
+
+.task .action button{
+  margin:0 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.4s;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.task .action .edit:hover{
+  color: var(--light_purple);
+} 
+.task .action .edit:active{
   opacity:0.8;
   color: var(--purple);
 }
 
-.delete{
-  font-weight: 700;
-  font-size: 1rem;
-  color: #fff;
-  transition: 0.4s;
-}
-.delete:hover{
+.task .action .delete:hover{
   color: var(--light_red);
 }
-.delete:active{
+.task .action .delete:active{
   opacity:0.8;
   color: var(--red);
-
 }
+
 
 .text{
   color:var(--light);
